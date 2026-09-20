@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "synapse-mini"
+version = "0.1.0a4"
+description = "Deterministic idea-to-structure core, cut from Synapse OS"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "pyyaml>=6.0,<7.0",
+]
+
+[project.scripts]
+synapse-bundle-inspect = "synapse.core.bundle:main"
+synapse-bundle-intake = "synapse.core.intake:main"
+synapse-bundle-stage = "synapse.core.stage:main"
+synapse-project-reconstruct = "synapse.core.project_reconstruction:main"
+synapse-run = "synapse.core.run:main"
+synapse-runtime-check = "synapse.runtime.bootstrap:main"
+synapse-structure-dispatch = "synapse.core.structural_dispatch:main"
+synapse-structure-report = "synapse.core.structural_export_report:main"
+synapse-structure-report-inspect = "synapse.core.structural_export_report_inspection:main"
+synapse-structure-review = "synapse.core.structural_export_review:main"
+
+[tool.setuptools.packages.find]
+include = ["synapse*"]

@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Synapse guided detail category",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "category_id", "label", "description", "base", "slots"],
+  "properties": {
+    "schema_version": {"type": "integer", "const": 1},
+    "category_id": {"type": "string", "enum": ["general", "software", "research", "content", "automation"]},
+    "label": {"type": "string", "minLength": 1, "maxLength": 200},
+    "description": {"type": "string", "minLength": 1, "maxLength": 2000},
+    "base": {"type": "boolean"},
+    "slots": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "category_id", "title", "purpose", "required", "artifact_role", "answer_mode", "completion_criteria", "question", "why_needed"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z][a-z0-9_.]*$", "maxLength": 160},
+          "category_id": {"type": "string", "enum": ["general", "software", "research", "content", "automation"]},
+          "title": {"type": "string", "minLength": 1, "maxLength": 2000},
+          "purpose": {"type": "string", "minLength": 1, "maxLength": 2000},
+          "required": {"type": "boolean"},
+          "artifact_role": {"type": "string", "minLength": 1, "maxLength": 80},
+          "answer_mode": {"enum": ["user_text", "guided_choice", "llm_draft"]},
+          "completion_criteria": {"type": "string", "minLength": 1, "maxLength": 2000},
+          "question": {"type": "string", "minLength": 1, "maxLength": 2000},
+          "why_needed": {"type": "string", "minLength": 1, "maxLength": 2000},
+          "suggestions": {"type": "array", "uniqueItems": true, "maxItems": 16, "items": {"type": "string", "maxLength": 240}},
+          "depends_on": {"type": "array", "uniqueItems": true, "items": {"type": "string", "maxLength": 160}},
+          "lens": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["purpose", "do", "do_not", "output_format"],
+            "properties": {
+              "purpose": {"type": "string", "minLength": 1, "maxLength": 2000},
+              "do": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1, "maxLength": 1000}},
+              "do_not": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1, "maxLength": 1000}},
+              "focus_questions": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1, "maxLength": 1000}},
+              "output_format": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1, "maxLength": 1000}}
+            }
+          }
+        }
+      }
+    }
+  }
+}

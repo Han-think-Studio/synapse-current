@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "category_id": "software",
+  "label": "소프트웨어 / 앱",
+  "description": "기능·인터페이스·검증을 세분화합니다.",
+  "base": false,
+  "slots": [
+    {
+      "id": "software.interfaces",
+      "category_id": "software",
+      "title": "인터페이스와 입출력",
+      "purpose": "사용자·서비스·파일 사이의 입력과 출력을 정의합니다.",
+      "required": true,
+      "artifact_role": "interfaces",
+      "answer_mode": "guided_choice",
+      "completion_criteria": "주요 입력·출력과 실패 응답이 한 흐름으로 설명됩니다.",
+      "question": "누가 무엇을 넣고, 어떤 결과를 받나요?",
+      "why_needed": "기능을 만들기 전에 경계를 고정해야 합니다.",
+      "suggestions": ["사용자 화면", "API", "파일/폴더", "실패 응답"],
+      "depends_on": []
+    },
+    {
+      "id": "software.validation",
+      "category_id": "software",
+      "title": "검증 기준",
+      "purpose": "기능이 완성됐다고 판단할 테스트와 실패 조건을 정합니다.",
+      "required": true,
+      "artifact_role": "tests",
+      "answer_mode": "user_text",
+      "completion_criteria": "정상·경계·실패 사례가 각각 하나 이상 있습니다.",
+      "question": "무엇을 확인하면 이 기능이 제대로 됐다고 말할 수 있나요?",
+      "why_needed": "구현 후 판단 기준을 나중에 바꾸지 않기 위해 필요합니다.",
+      "suggestions": ["정상 흐름", "경계값", "실패/롤백"],
+      "depends_on": []
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+name: Subscription Payment Detector — Nemotron live test 2026-09-16
+preset: software
+status: PROPOSED
+purpose: 사용자가 직접 내려받은 CSV 파일을 분석해 매달 반복되는 구독 결제를 찾아내고, 금액 변동과 이용 빈도를 표시해주는 로컬 도구를 제공한다.

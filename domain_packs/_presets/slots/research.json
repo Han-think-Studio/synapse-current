@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "category_id": "research",
+  "label": "연구 / 지식",
+  "description": "자료·방법·검증 흐름을 세분화합니다.",
+  "base": false,
+  "slots": [
+    {
+      "id": "research.sources",
+      "category_id": "research",
+      "title": "자료와 근거",
+      "purpose": "주장을 뒷받침할 자료와 출처의 신뢰도를 분리합니다.",
+      "required": true,
+      "artifact_role": "sources",
+      "answer_mode": "user_text",
+      "completion_criteria": "핵심 주장마다 확인할 자료 유형과 출처 기준이 있습니다.",
+      "question": "어떤 자료를 근거로 삼고, 무엇을 믿지 않을 건가요?",
+      "why_needed": "근거 없는 가정이 사실처럼 굳는 것을 막습니다.",
+      "suggestions": ["1차 자료", "비교 자료", "출처 신뢰도 기준"],
+      "depends_on": []
+    },
+    {
+      "id": "research.method",
+      "category_id": "research",
+      "title": "방법과 판단 기준",
+      "purpose": "자료를 어떻게 비교·분석하고 결론을 보류할지 정합니다.",
+      "required": true,
+      "artifact_role": "method",
+      "answer_mode": "guided_choice",
+      "completion_criteria": "반복 가능한 분석 절차와 중단 조건이 설명됩니다.",
+      "question": "자료를 어떤 순서와 기준으로 분석할까요?",
+      "why_needed": "결론이 자료 선택에 따라 흔들리지 않게 합니다.",
+      "suggestions": ["비교 분석", "분류", "사례 검토", "반증 조건"],
+      "depends_on": []
+    }
+  ]
+}

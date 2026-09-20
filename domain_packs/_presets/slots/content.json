@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "category_id": "content",
+  "label": "콘텐츠 / 스토리",
+  "description": "대상·연속성·구성을 세분화합니다.",
+  "base": false,
+  "slots": [
+    {
+      "id": "content.subjects",
+      "category_id": "content",
+      "title": "대상·독자와 등장 요소",
+      "purpose": "누가 어떤 형식으로 경험할지와, 인물·장소·사물·주제의 역할과 관계를 함께 정합니다.",
+      "required": true,
+      "artifact_role": "subjects",
+      "answer_mode": "user_text",
+      "completion_criteria": "대상 독자/사용자와 전달 형식, 핵심 대상의 욕구/기능과 서로의 충돌이 함께 정리됩니다.",
+      "question": "누가 어떤 형식으로 경험하며, 이야기나 콘텐츠를 움직이는 핵심 대상은 누구/무엇인가요?",
+      "why_needed": "톤·분량·구성 선택과 장면·에피소드·콘텐츠 단위 구성이 모두 대상을 중심으로 달라집니다.",
+      "suggestions": ["소설", "영상", "게임", "기획 문서", "혼합 형식", "주요 인물", "대립 대상", "장소", "반복 모티프"],
+      "depends_on": []
+    },
+    {
+      "id": "content.continuity",
+      "category_id": "content",
+      "title": "연속성·톤 규칙",
+      "purpose": "세계관·톤·시점·표현의 일관성 규칙을 정합니다.",
+      "required": false,
+      "artifact_role": "continuity",
+      "answer_mode": "user_text",
+      "completion_criteria": "다음 장면/에피소드에서도 유지할 규칙이 기록됩니다.",
+      "question": "다음 장면에서도 반드시 유지할 세계·톤·시점 규칙은 무엇인가요?",
+      "why_needed": "나중에 채워도 기존 내용과 충돌하지 않게 합니다.",
+      "suggestions": ["시점", "금지 표현", "세계 규칙", "공개 순서"],
+      "depends_on": []
+    },
+    {
+      "id": "content.outline",
+      "category_id": "content",
+      "title": "구성·전개 순서",
+      "purpose": "장면·챕터·에피소드의 순서와 각 단위의 목적을 정합니다.",
+      "required": false,
+      "artifact_role": "outline",
+      "answer_mode": "llm_draft",
+      "completion_criteria": "첫 단위와 다음 단위의 전환 조건이 설명됩니다.",
+      "question": "전체를 어떤 장면/에피소드 단위로 나누고, 첫 단위는 어디까지인가요?",
+      "why_needed": "완성 전에도 첫 작업부터 사용할 수 있게 합니다.",
+      "suggestions": ["3막", "챕터", "에피소드", "장면 카드"],
+      "depends_on": []
+    }
+  ]
+}

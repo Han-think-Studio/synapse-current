@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "category_id": "general",
+  "label": "일반 기본",
+  "description": "모든 프로젝트에 필요한 공통 뼈대입니다.",
+  "base": true,
+  "slots": [
+    {
+      "id": "general.goal",
+      "category_id": "general",
+      "title": "원하는 결과",
+      "purpose": "이 프로젝트가 끝났을 때 얻고 싶은 결과를 고정합니다.",
+      "required": true,
+      "artifact_role": "goals",
+      "answer_mode": "user_text",
+      "completion_criteria": "검토 가능한 결과와 성공 기준이 한 문단으로 정리됩니다.",
+      "question": "이 프로젝트가 끝나면 무엇이 달라져 있어야 하나요?",
+      "why_needed": "결과가 없으면 이후 세부 항목의 우선순위를 정할 수 없습니다.",
+      "suggestions": [
+        "사용 가능한 첫 결과",
+        "검증 가능한 성공 기준"
+      ],
+      "depends_on": []
+    },
+    {
+      "id": "general.scope",
+      "category_id": "general",
+      "title": "범위와 하지 않을 일",
+      "purpose": "이번 단계에 포함할 것과 나중으로 미룰 것을 분리합니다.",
+      "required": true,
+      "artifact_role": "constraints",
+      "answer_mode": "guided_choice",
+      "completion_criteria": "포함 범위와 제외 범위가 각각 한 가지 이상 정해집니다.",
+      "question": "이번 단계에서 반드시 다룰 것과 다루지 않을 것은 무엇인가요?",
+      "why_needed": "범위를 고정해야 구조가 필요 이상으로 커지지 않습니다.",
+      "suggestions": [
+        "작은 첫 범위",
+        "명시적 제외 항목",
+        "시간·도구 제약"
+      ],
+      "depends_on": []
+    },
+    {
+      "id": "general.premises",
+      "category_id": "general",
+      "title": "가설과 전제",
+      "purpose": "아이디어가 성립하기 위해 참이라고 가정하는 것을 명시합니다.",
+      "required": true,
+      "artifact_role": "premises",
+      "answer_mode": "llm_draft",
+      "completion_criteria": "검증 가능한 전제와 그것이 깨질 때의 영향이 정리됩니다.",
+      "question": "이 아이디어가 성립하려면 무엇이 참이라고 가정해야 하나요?",
+      "why_needed": "전제를 드러내야 나중에 그것이 틀렸을 때 무엇이 무너지는지 알 수 있습니다.",
+      "suggestions": [
+        "사용자 가정",
+        "기술적 전제",
+        "자원·시간 전제",
+        "외부 의존"
+      ],
+      "depends_on": []
+    },
+    {
+      "id": "general.entities",
+      "category_id": "general",
+      "title": "핵심 대상과 관계",
+      "purpose": "사람·개념·파일·기능 등 프로젝트가 다루는 대상을 정리합니다.",
+      "required": true,
+      "artifact_role": "entities",
+      "answer_mode": "user_text",
+      "completion_criteria": "핵심 대상과 서로 영향을 주는 관계가 식별됩니다.",
+      "question": "이 프로젝트에서 반드시 등장하거나 움직이는 대상은 무엇인가요?",
+      "why_needed": "대상이 정해져야 세부 작업과 영향 범위를 계산할 수 있습니다.",
+      "suggestions": [
+        "사람/역할",
+        "개념/규칙",
+        "입력/출력"
+      ],
+      "depends_on": []
+    },
+    {
+      "id": "general.rules",
+      "category_id": "general",
+      "title": "지켜야 할 규칙",
+      "purpose": "항상 유지할 정합성·안전·품질 조건을 정합니다.",
+      "required": false,
+      "artifact_role": "invariants",
+      "answer_mode": "user_text",
+      "completion_criteria": "변경 때마다 확인할 규칙이 한 가지 이상 기록됩니다.",
+      "question": "내용이나 구현이 바뀌어도 절대 깨지면 안 되는 것은 무엇인가요?",
+      "why_needed": "나중에 내용을 보강해도 기존 합의를 잃지 않게 합니다.",
+      "suggestions": [
+        "안전 조건",
+        "스타일/톤",
+        "호환성",
+        "금지사항"
+      ],
+      "depends_on": []
+    },
+    {
+      "id": "general.failure_criteria",
+      "category_id": "general",
+      "title": "실패 기준",
+      "purpose": "무엇을 보면 이 방향이 실패했다고 판단할지 미리 정합니다.",
+      "required": true,
+      "artifact_role": "failure_criteria",
+      "answer_mode": "llm_draft",
+      "completion_criteria": "관찰 가능한 실패 신호와 그때 취할 대응이 한 가지 이상 적힙니다.",
+      "question": "무엇이 관찰되면 이 접근을 멈추거나 되돌려야 하나요?",
+      "why_needed": "실패 기준이 없으면 잘못된 방향을 오래 붙들게 됩니다.",
+      "suggestions": [
+        "성공 기준의 반대",
+        "관찰 가능한 신호",
+        "중단 조건",
+        "롤백 시점"
+      ],
+      "depends_on": []
+    },
+    {
+      "id": "general.next_step",
+      "category_id": "general",
+      "title": "첫 작업과 완료 조건",
+      "purpose": "전체를 한 번에 채우지 않고 지금 할 한 단위로 줄입니다.",
+      "required": true,
+      "artifact_role": "next_steps",
+      "answer_mode": "guided_choice",
+      "completion_criteria": "첫 WorkUnit의 입력·결과·완료 조건이 명확합니다.",
+      "question": "지금 가장 작게 끝낼 수 있는 첫 작업은 무엇인가요?",
+      "why_needed": "프로젝트를 바로 사용할 수 있는 최소 단위를 만들기 위해 필요합니다.",
+      "suggestions": [
+        "원문과 목표 확정",
+        "핵심 대상 목록",
+        "첫 장면/기능/조사 질문"
+      ],
+      "depends_on": []
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "id": "content",
+  "label": "콘텐츠 / 스토리",
+  "description": "소설뿐 아니라 영상·게임·기획 콘텐츠에도 쓸 수 있습니다.",
+  "tags": ["스토리", "기획"],
+  "files": [
+    {"path": "synapse.project.yaml", "title": "Project manifest", "purpose": "프로젝트 이름·프리셋·초안 버전을 기록합니다.", "required": true, "initial_status": "GUIDE"},
+    {"path": "README.md", "title": "사용 안내", "purpose": "처음 합의한 목표와 다음 작업 순서를 짧게 적습니다.", "required": true, "initial_status": "GUIDE"},
+    {"path": "00_intake/idea.md", "title": "아이디어 원문", "purpose": "사용자가 처음 적은 아이디어를 원문 그대로 보존합니다.", "required": true, "initial_status": "EMPTY"},
+    {"path": "01_context/goals.md", "title": "목표", "purpose": "무엇을 만들고 어떤 결과를 원하는지 적습니다.", "required": true, "initial_status": "EMPTY"},
+    {"path": "01_context/constraints.md", "title": "제약과 경계", "purpose": "하지 않을 일, 환경, 비용, 안전 조건을 적습니다.", "required": true, "initial_status": "EMPTY"},
+    {"path": "02_model/entities.md", "title": "핵심 대상", "purpose": "사람·파일·개념·기능 등 핵심 대상을 정의합니다.", "required": true, "initial_status": "EMPTY"},
+    {"path": "02_model/relations.md", "title": "관계", "purpose": "대상 사이의 연결과 의존성을 적습니다.", "required": true, "initial_status": "EMPTY"},
+    {"path": "03_rules/invariants.md", "title": "정합성 규칙", "purpose": "항상 지켜야 하는 규칙과 금지사항을 적습니다.", "required": true, "initial_status": "EMPTY"},
+    {"path": "04_work/next_steps.md", "title": "다음 작업", "purpose": "작게 나눌 다음 작업과 완료 조건을 적습니다.", "required": true, "initial_status": "EMPTY"},
+    {"path": "99_review/open_questions.md", "title": "미해결 질문", "purpose": "아직 결정하지 않은 점을 숨기지 않고 남깁니다.", "required": true, "initial_status": "EMPTY"},
+    {"path": "02_model/subjects.md", "title": "등장 대상", "purpose": "인물·장소·제품·주제 등 콘텐츠의 대상을 적습니다.", "required": true, "initial_status": "EMPTY"},
+    {"path": "03_rules/continuity.md", "title": "연속성 규칙", "purpose": "세계관·톤·브랜드·형식의 일관성 규칙을 적습니다.", "required": true, "initial_status": "EMPTY"},
+    {"path": "04_work/outline.md", "title": "구성", "purpose": "장면·챕터·에피소드·제작 순서를 적습니다.", "required": true, "initial_status": "EMPTY"}
+  ]
+}

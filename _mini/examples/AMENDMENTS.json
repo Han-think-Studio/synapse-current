@@ -1,0 +1,289 @@
+{
+  "schema_version": "synapse.mini.amendment.v1",
+  "status": "APPLIED",
+  "purpose": "Documented editorial corrections to the shipped example copies.",
+  "source_evidence": "artifacts/mini-examples-20260915",
+  "source_evidence_shipped": false,
+  "original_model_artifacts_unchanged": true,
+  "notes": [
+    "The dated model fills and their receipts remain the original run evidence.",
+    "The _mini/examples copies below are reviewed release-facing copies.",
+    "The semantic contract amendments were approved by the Supervisor on 2026-09-20 and are recorded separately from model-run provenance.",
+    "No amendment below claims a fresh model run; original model artifacts and receipts remain unchanged.",
+    "The deterministic checker result is re-run after the amendments, but READY does not by itself prove literary, domain, or statistical validity."
+  ],
+  "amendments": [
+    {
+      "fill": "local_docs_search_fill.json",
+      "path": "03_rules/invariants.md",
+      "from": "색입 큐",
+      "to": "색인 큐",
+      "reason": "obvious Korean typo",
+      "original_fill_sha256": "6fe9b065242db5e023558c06d74f4a4f13c6da484185a8ae33262cf19d188419",
+      "amended_fill_sha256": "2a8bdd168c9d2e856f39b26b69440e5dcae3d2588819fc4dd1f43d2f919e96ff",
+      "original_utf8_bytes": 1208,
+      "amended_utf8_bytes": 1208,
+      "receipt_utf8_bytes": 1208
+    },
+    {
+      "fill": "local_docs_search_fill.json",
+      "path": "04_work/next_steps.md",
+      "from": "폴러",
+      "to": "폴더",
+      "reason": "obvious Korean typo",
+      "original_fill_sha256": "6fe9b065242db5e023558c06d74f4a4f13c6da484185a8ae33262cf19d188419",
+      "amended_fill_sha256": "2a8bdd168c9d2e856f39b26b69440e5dcae3d2588819fc4dd1f43d2f919e96ff",
+      "original_utf8_bytes": 1596,
+      "amended_utf8_bytes": 1596,
+      "receipt_utf8_bytes": 1596
+    },
+    {
+      "fill": "meeting_notes_fill.json",
+      "path": "01_context/constraints.md",
+      "from": "시간codes",
+      "to": "타임코드",
+      "reason": "mixed-language wording corrected to the established Korean term",
+      "original_fill_sha256": "dca2f6a5f600b7ee3bbc8728a0c2c836689de62f51928db8ab3ad9f43ab2e6bf",
+      "amended_fill_sha256": "141b5b52eb85cf59a17542b190f576795360bcb5f93e0accb1366ae626babc44",
+      "original_utf8_bytes": 1321,
+      "amended_utf8_bytes": 1322,
+      "receipt_utf8_bytes": 1321
+    },
+    {
+      "fill": "persona_chatbot_fill.json",
+      "path": "03_rules/invariants.md",
+      "from": "설정와",
+      "to": "설정과",
+      "reason": "Korean particle agreement corrected",
+      "original_fill_sha256": "98d37c39bd5ca3d12fd436751a1dc71b9735f9ce2f2bedab3536d467ca215822",
+      "amended_fill_sha256": "42b3fb65161a2f44e294f69c373e3ee8c28b36196f8eebe403d73f8740929f48",
+      "original_utf8_bytes": 969,
+      "amended_utf8_bytes": 1061,
+      "receipt_utf8_bytes": 969
+    },
+    {
+      "kind": "whole_fill_provenance_reconciliation",
+      "fill": "image_translation_fill.json",
+      "reason": "The preserved dated artifact and the release-facing fill are distinct outputs; the receipt byte counts bind to the release-facing fill, not to the preserved artifact.",
+      "original_fill_sha256": "462ba42b4f32026ef6c6fc5d5beb0d33b08f4b37ef34e0eee7a9c562262cc378",
+      "amended_fill_sha256": "f1df35d7d08786c1ea66d46ba5e4f8b11d81c17334b3ea5b9eb82dbc8f632942",
+      "original_utf8_bytes": 14909,
+      "amended_utf8_bytes": 15532,
+      "receipt_sha256": "4d2795a8e1f2cfeab19ee96a9eb1a19d7b8a1edd956d956c83e92b80084d89ba",
+      "receipt_model_written_files": 12,
+      "receipt_matches_original": false,
+      "receipt_matches_amended": false,
+      "fresh_model_run": false,
+      "editorial_approval": true
+    },
+    {
+      "kind": "semantic_contract_amendment",
+      "fill": "codebase_assistant_fill.json",
+      "reason": "Supervisor-approved release-facing semantic contract correction.",
+      "original_fill_sha256": "d1a1ae68b20446947f6352a20f183a2a8e3b790b628ded98f508e1e29ab37e66",
+      "amended_fill_sha256": "ea7eb60964b4348f13dbc83b547a6fc1773541eaae06057a41bd0dc535788f22",
+      "original_utf8_bytes": 12759,
+      "amended_utf8_bytes": 12710,
+      "fresh_model_run": false,
+      "editorial_approval": true,
+      "changes": [
+        {
+          "path": "01_context/constraints.md",
+          "from": "- 코드 추론이나 해석 없이, 검색된 소스 코드의 직접 인용만 허용한다.",
+          "to": "- 직접 인용을 핵심 근거로 사용하며, 호출 관계나 설정 전파를 설명할 때는 인용된 줄과 해당 관계를 명시적으로 연결한다."
+        },
+        {
+          "path": "02_model/entities.md",
+          "from": "코드베이스 전체를 대상으로 하지 않고, 질문자가 현재 작업 중인 저장소 내의 특정 파일을 핵심 대상으로 삼는다.",
+          "to": "질문의 중심이 되는 파일을 먼저 선택하되, 답변에 필요한 호출자·설정 읽기 지점·관련 파일은 현재 색인 범위 안에서 함께 확인한다."
+        }
+      ]
+    },
+    {
+      "kind": "semantic_contract_amendment",
+      "fill": "youtube_digest_fill.json",
+      "reason": "Supervisor-approved release-facing semantic contract correction.",
+      "original_fill_sha256": "dcd36f8c77902d1c57d7d6e78183c9d124e4e2ec57b2207b90f0c8daf3fc0dca",
+      "amended_fill_sha256": "cf4a5bfc0b5b1f41f5a7e98f4d74f0a49c809c9f54a33135d85afc714eb41682",
+      "original_utf8_bytes": 17988,
+      "amended_utf8_bytes": 17636,
+      "fresh_model_run": false,
+      "editorial_approval": true,
+      "changes": [
+        {
+          "path": "02_model/entities.md",
+          "from": "처리 실패 시 해당 분량만 재시도하거나 보류하는 복구 로직이 적용됩니다.",
+          "to": "처리 실패는 FAILED 상태와 체크포인트로 기록하고, 명시적으로 요청한 제한된 재시도·재개에서만 해당 분량을 다시 처리합니다."
+        },
+        {
+          "path": "03_rules/safety.md",
+          "from": "## 오류 시 롤백 및 복구",
+          "to": "## 오류 시 상태 구분과 복구"
+        },
+        {
+          "path": "04_work/runs.md",
+          "from": "자동 모드에서는 매일 아침 9시 이전에 한 번씩 트리거되며",
+          "to": "자동 모드는 배포 환경에서 정한 일정으로 실행하고"
+        },
+        {
+          "path": "README.md",
+          "from": "매일 자동 실행 및 수동 재실행 방법에 대해 설명합니다.",
+          "to": "자동 실행은 배포 환경에서 정한 일정으로 수행하고, 수동 실행은 특정 날짜와 재개·재시도 범위를 받습니다."
+        }
+      ]
+    },
+    {
+      "kind": "semantic_contract_amendment",
+      "fill": "image_translation_fill.json",
+      "reason": "Supervisor-approved release-facing semantic contract correction.",
+      "original_fill_sha256": "462ba42b4f32026ef6c6fc5d5beb0d33b08f4b37ef34e0eee7a9c562262cc378",
+      "amended_fill_sha256": "f1df35d7d08786c1ea66d46ba5e4f8b11d81c17334b3ea5b9eb82dbc8f632942",
+      "original_utf8_bytes": 14909,
+      "amended_utf8_bytes": 15532,
+      "fresh_model_run": false,
+      "editorial_approval": true,
+      "changes": [
+        {
+          "path": "01_context/constraints.md",
+          "from": "- 번역된 텍스트가 원래 글자 영역보다 길 경우, 잘림 현상(Cut-off) 없이 가독성을 위해 적절히 줄이거나, 길이 초과 시 '길음'으로 표시하여 사용자가 인지할 수 있도록 한다.",
+          "to": "길이가 부족해도 문장이나 정보 일부를 생략하지 않습니다. 승인된 범위에서 폰트나 줄 간격을 조정할 수 있지만, 맞출 수 없으면 원문을 유지한 채 '넘침'으로 표시하고 사람 검토로 넘깁니다."
+        }
+      ]
+    },
+    {
+      "kind": "semantic_contract_amendment",
+      "fill": "meeting_notes_fill.json",
+      "reason": "Supervisor-approved release-facing semantic contract correction.",
+      "original_fill_sha256": "dca2f6a5f600b7ee3bbc8728a0c2c836689de62f51928db8ab3ad9f43ab2e6bf",
+      "amended_fill_sha256": "141b5b52eb85cf59a17542b190f576795360bcb5f93e0accb1366ae626babc44",
+      "original_utf8_bytes": 14310,
+      "amended_utf8_bytes": 14412,
+      "fresh_model_run": false,
+      "editorial_approval": true,
+      "changes": [
+        {
+          "path": "03_rules/invariants.md",
+          "from": "- 녹음된 발화 내용이 회의록의 요약이나 할 일 목록에 '결정됨'으로 표현되지 않도록 한다.",
+          "to": "- 녹음된 발화는 명시적인 합의·확정 발언 또는 승인된 결정 기록이 있을 때만 회의록에서 '결정됨'으로 표현한다."
+        },
+        {
+          "path": "04_work/next_steps.md",
+          "from": "화자 미기로 처리하여",
+          "to": "화자 미확인으로 처리하여"
+        }
+      ]
+    },
+    {
+      "kind": "semantic_contract_amendment",
+      "fill": "persona_chatbot_fill.json",
+      "reason": "Supervisor-approved release-facing semantic contract correction.",
+      "original_fill_sha256": "98d37c39bd5ca3d12fd436751a1dc71b9735f9ce2f2bedab3536d467ca215822",
+      "amended_fill_sha256": "42b3fb65161a2f44e294f69c373e3ee8c28b36196f8eebe403d73f8740929f48",
+      "original_utf8_bytes": 14536,
+      "amended_utf8_bytes": 14940,
+      "fresh_model_run": false,
+      "editorial_approval": true,
+      "changes": [
+        {
+          "path": "03_rules/continuity.md",
+          "from": "새로운 맥락은 무시하고 기존 설정을 우선 적용한다.",
+          "to": "새로운 맥락이 자동으로 설정을 덮어쓰지 않게 한다."
+        },
+        {
+          "path": "03_rules/continuity.md",
+          "from": "'현재 설정에 따르면 OO체여야 합니다'라는 메타 멘트를 삽입하여",
+          "to": "캐릭터의 발화 안에 메타 멘트를 삽입하지 않는다. 검증 결과는 별도 메타데이터나 검토 플래그로 남기고,"
+        },
+        {
+          "path": "README.md",
+          "from": "새로운 턴이 시작될 때마다 최신 대화 내용만 설정 파일에 전달하여",
+          "to": "새로운 턴의 맥락은 참고 자료로만 사용하며 설정 파일을 자동으로 덮어쓰지 않습니다."
+        }
+      ]
+    },
+    {
+      "kind": "semantic_contract_amendment",
+      "fill": "local_model_bench_fill.json",
+      "reason": "Supervisor-approved release-facing semantic contract correction.",
+      "original_fill_sha256": "a2199361199fcc72a239b0bfffacdef69a1618002861a1a4b2ed65742dbb7ce8",
+      "amended_fill_sha256": "64ae28a3800cf77b309e5667b326637128572c652d796b4a81cb6688ec18958a",
+      "original_utf8_bytes": 13112,
+      "amended_utf8_bytes": 13491,
+      "fresh_model_run": false,
+      "editorial_approval": true,
+      "changes": [
+        {
+          "path": "01_context/goals.md",
+          "from": "실행 환경(양자화, 컨텍스트 길이 등)을 변수별로 고정하여",
+          "to": "재현성 주장은 백엔드·런타임 버전, 모델 식별자와 revision/hash, 양자화, 컨텍스트 길이, 입력·프롬프트 해시, decoding(temperature/top-p/max tokens/stop), seed 지원 여부, 하드웨어·OS를 함께 기록한 튜플을 기준으로 한다."
+        },
+        {
+          "path": "02_model/relations.md",
+          "from": "서로 다른 양자화 레벨이나 컨텍스트 길이를 가진 모델은 보정 인자로 기록되며 비교의 근거가 된다.",
+          "to": "서로 다른 양자화 레벨이나 컨텍스트 길이를 가진 실행은 동일 비교군에 섞지 않고 별도 조건으로 기록한다."
+        },
+        {
+          "path": "README.md",
+          "from": "모델 이름·양자화·컨텍스트 길이·샘플링 설정을 결과와 함께 저장하며",
+          "to": "백엔드·런타임 버전, 모델 이름과 revision/hash, 양자화, 컨텍스트 길이, 입력·프롬프트 해시, 샘플링 설정, seed 지원 여부, 하드웨어 조건을 결과와 함께 저장하며"
+        }
+      ]
+    },
+    {
+      "kind": "semantic_contract_amendment",
+      "fill": "prompt_ab_test_fill.json",
+      "reason": "Supervisor-approved release-facing semantic contract correction.",
+      "original_fill_sha256": "0cfa8e91f2b5a75e42dd2dbaec3b2ca5e377b210e09926e14112e0158b2d6dbc",
+      "amended_fill_sha256": "7e3659af1ef2b7e7b9458201ee988a03ade5b82f143e2d39656554e391eb1eec",
+      "original_utf8_bytes": 13676,
+      "amended_utf8_bytes": 13942,
+      "fresh_model_run": false,
+      "editorial_approval": true,
+      "changes": [
+        {
+          "path": "01_context/constraints.md",
+          "from": "동일한 입력 묶음에서만 비교한다. 입력이 다르면 결과에 포함하지 않는다.",
+          "to": "동일한 입력 묶음에서만 비교하고, 입력마다 A/B 결과를 짝지어 기록한다."
+        },
+        {
+          "path": "03_rules/invariants.md",
+          "from": "프롬프트 변경 전후의 성능 차이를 측정할 때, 온도나 시드에 의해 발생하는 자연스러운 변동 범위(흔들림 폭)보다 작은 차이는 개선으로 간주하지 않는다.",
+          "to": "프롬프트 변경 전후의 성능 차이는 사전 등록한 1차 지표와 paired design으로 측정한다."
+        },
+        {
+          "path": "README.md",
+          "from": "흔들림 폭 측정: 온도나 시드 등으로 인한 변동폭을 먼저 재고, 그 폭보다 작은 차이는 '개선'이라고 부르지 않습니다.",
+          "to": "통계 계약: 결과를 보기 전에 1차 지표, 최소 30개 paired observation, 유의수준과 95% 신뢰구간의 비교 방법, noise threshold를 기록합니다."
+        }
+      ]
+    },
+    {
+      "kind": "semantic_contract_amendment",
+      "fill": "workflow_audit_fill.json",
+      "reason": "Supervisor-approved release-facing semantic contract correction.",
+      "original_fill_sha256": "e51778271af9a7b797f66686cf48a2fe70933ef70df1c49c4079fd2a837b3364",
+      "amended_fill_sha256": "dc0df30c4dfc1cb4d0d3d1c1e9ac8a03cee4346585eb71d3d1525d3e460fbbbd",
+      "original_utf8_bytes": 8392,
+      "amended_utf8_bytes": 9150,
+      "fresh_model_run": false,
+      "editorial_approval": true,
+      "changes": [
+        {
+          "path": "02_model/entities.md",
+          "from": "기록은 최소 3일 이상 유지해야 신뢰할 수 있는 데이터가 된다.",
+          "to": "기록은 아이디어가 요구한 일주일 전체를 유지해야 후보 판단의 근거가 된다."
+        },
+        {
+          "path": "03_rules/invariants.md",
+          "from": "- **기본 규칙**: 업무 수행에 필수적인 최소한의 준수 사항",
+          "to": "- 후보는 정확히 일주일 동안 실제로 기록된 업무에서만 만든다."
+        },
+        {
+          "path": "README.md",
+          "from": "- 출근 후 첫 번째 업무: 메일 확인 및 우선순위 정렬",
+          "to": "먼저 7일 동안 실제 업무를 기록합니다."
+        }
+      ]
+    }
+  ]
+}

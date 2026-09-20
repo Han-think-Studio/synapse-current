@@ -1,0 +1,14 @@
+{
+  "synapse.project.yaml": "name: Subscription Payment Detector\npreset: software\nstatus: PROPOSED\npurpose: Detect recurring payments from local CSV exports.\n",
+  "README.md": "# Subscription Payment Detector\n\nThis tool finds recurring charges in user supplied CSV exports.\n\n## Scope\n\nLocal analysis only; each candidate keeps evidence back to source rows.\n",
+  "00_intake/idea.md": "# Idea\n\nDetect recurring subscription payments from a CSV export while keeping the raw data local.\n\n## Input\n\nA user supplied transaction CSV is the only source.\n",
+  "01_context/goals.md": "# Goals\n\nNormalize transaction rows, group merchants, detect periodic charges, and explain each candidate.\n\n## Success\n\nEvery candidate includes source row references and a confidence explanation.\n",
+  "01_context/constraints.md": "# Constraints\n\nThe tool reads CSV only and never connects to bank or card accounts.\n\n## Privacy\n\nNo financial data leaves the local workspace.\n",
+  "02_model/entities.md": "# Entities\n\nA Transaction has date, merchant, amount, currency, and source row identity.\n\nA SubscriptionCandidate groups transactions that share merchant and periodic behavior.\n",
+  "02_model/interfaces.md": "# Interfaces\n\nCSV input becomes normalized transactions; the detector emits candidate records and evidence references.\n\nThe output interface is read-only for this mini preview.\n",
+  "02_model/relations.md": "# Relations\n\nTransactions belong to merchant groups. Merchant groups produce candidates when periodicity and amount evidence agree.\n\nA candidate links back to every supporting transaction row.\n",
+  "03_rules/invariants.md": "# Invariants\n\nA candidate must have at least two dated transactions and at least one source-row reference.\n\nMalformed rows are rejected without changing accepted records.\n",
+  "04_work/next_steps.md": "# Next steps\n\nImplement CSV normalization, then add periodicity detection and a review table for candidate evidence.\n\nThe first task is a deterministic fixture with monthly and non-monthly examples.\n",
+  "05_validation/tests.md": "# Validation\n\nTest duplicate rows, missing dates, merchant aliases, amount changes, and irregular intervals.\n\nThe detector must explain why each candidate was accepted or rejected.\n",
+  "99_review/open_questions.md": "# Open questions\n\nWhich date tolerance should count as monthly for a merchant with weekends and holidays?\n\nWho will approve the threshold before a production workflow uses it?\n"
+}

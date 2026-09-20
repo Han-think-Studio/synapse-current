@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "profile_id": "game",
+  "status": "BLUEPRINT_ONLY",
+  "files": [
+    {
+      "path": "01_world/world_rules.md",
+      "zone": "context"
+    },
+    {
+      "path": "02_entities/entities.md",
+      "zone": "actors"
+    },
+    {
+      "path": "02_entities/factions_quests.md",
+      "zone": "relationships"
+    },
+    {
+      "path": "03_progression/player_effects.md",
+      "zone": "causality"
+    },
+    {
+      "path": "03_progression/progression.md",
+      "zone": "milestones"
+    },
+    {
+      "path": "04_events/events_foreshadowing.md",
+      "zone": "signals"
+    },
+    {
+      "path": "05_play/scenes_controls.md",
+      "zone": "interactions"
+    },
+    {
+      "path": "06_systems/ai_save_reaction.md",
+      "zone": "state_reaction"
+    },
+    {
+      "path": "07_validation/balance_continuity.md",
+      "zone": "integrity"
+    }
+  ],
+  "zones": [
+    {
+      "id": "context",
+      "artifact": "world_rules",
+      "acceptance": "세계·규칙·자원 제약이 고정됨",
+      "focus_questions": [
+        "플레이어가 이해해야 할 세계 규칙은 무엇인가?",
+        "자원·시간·위험의 제약은 무엇인가?",
+        "규칙을 깨면 어떤 일관된 결과가 발생하는가?"
+      ],
+      "required_fields": [
+        "world_rule",
+        "resource",
+        "constraint",
+        "violation_result"
+      ]
+    },
+    {
+      "id": "actors",
+      "artifact": "entities",
+      "acceptance": "플레이어·NPC·아이템이 고유 ID를 가짐",
+      "focus_questions": [
+        "플레이어·NPC·아이템의 고유 ID와 역할은 무엇인가?",
+        "각 엔티티의 상태와 행동 가능 범위는 무엇인가?",
+        "플레이어가 식별하고 기억해야 할 핵심은 무엇인가?"
+      ],
+      "required_fields": [
+        "entity_id",
+        "role",
+        "state",
+        "actions"
+      ]
+    },
+    {
+      "id": "relationships",
+      "artifact": "factions_quests",
+      "acceptance": "세력·관계·퀘스트 의존성이 연결됨",
+      "focus_questions": [
+        "세력·인물·퀘스트의 관계 방향은 무엇인가?",
+        "관계 변화가 어떤 콘텐츠를 열거나 닫는가?",
+        "순환 참조와 소프트락을 어떻게 방지하는가?"
+      ],
+      "required_fields": [
+        "faction_id",
+        "relation",
+        "quest_dependency",
+        "lock_rule"
+      ]
+    },
+    {
+      "id": "causality",
+      "artifact": "player_effects",
+      "acceptance": "행동에서 상태·보상까지 추적됨",
+      "focus_questions": [
+        "플레이어 행동이 어떤 세계 상태를 바꾸는가?",
+        "변화가 보상·위험·이야기 결과로 어떻게 이어지는가?",
+        "되돌릴 수 없는 선택은 어떻게 안내되는가?"
+      ],
+      "required_fields": [
+        "action",
+        "state_change",
+        "reward",
+        "irreversible_effect"
+      ]
+    },
+    {
+      "id": "milestones",
+      "artifact": "progression",
+      "acceptance": "챕터·레벨·진행 단계가 정렬됨",
+      "focus_questions": [
+        "챕터·레벨·해금 조건은 무엇인가?",
+        "각 진행 단계의 학습·도전·보상은 무엇인가?",
+        "막힌 플레이어를 위한 우회·복구 경로는 무엇인가?"
+      ],
+      "required_fields": [
+        "stage",
+        "unlock",
+        "challenge",
+        "recovery"
+      ]
+    },
+    {
+      "id": "signals",
+      "artifact": "events_foreshadowing",
+      "acceptance": "이벤트·위험·복선 신호가 정의됨",
+      "focus_questions": [
+        "이벤트·위험·복선은 어떤 조건에서 발생하는가?",
+        "플레이어가 신호를 알아차릴 피드백은 무엇인가?",
+        "중복·누락·잘못된 트리거를 어떻게 검사하는가?"
+      ],
+      "required_fields": [
+        "event_id",
+        "trigger",
+        "player_feedback",
+        "deduplication"
+      ]
+    },
+    {
+      "id": "interactions",
+      "artifact": "scenes_controls",
+      "acceptance": "장면·조작·승패 흐름이 설명됨",
+      "focus_questions": [
+        "장면의 목표·조작·승패 흐름은 무엇인가?",
+        "입력 실패와 중단 후 재개는 어떻게 처리하는가?",
+        "조작과 UI가 규칙을 오해하지 않게 어떻게 돕는가?"
+      ],
+      "required_fields": [
+        "scene",
+        "objective",
+        "input",
+        "win_loss"
+      ]
+    },
+    {
+      "id": "state_reaction",
+      "artifact": "ai_save_reaction",
+      "acceptance": "AI·전투·인벤토리·세이브 반응이 정의됨",
+      "focus_questions": [
+        "AI·전투·인벤토리·세이브의 상태는 무엇인가?",
+        "동시 사건과 지연이 발생하면 우선순위는 무엇인가?",
+        "로드·복구 후 상태를 어떻게 재현하고 검증하는가?"
+      ],
+      "required_fields": [
+        "system",
+        "state",
+        "priority",
+        "replay_rule"
+      ]
+    },
+    {
+      "id": "integrity",
+      "artifact": "balance_continuity",
+      "acceptance": "밸런스·세이브·연속성이 검증됨",
+      "focus_questions": [
+        "난이도·경제·보상 곡선의 기준은 무엇인가?",
+        "세이브 손상·중복 보상·치명적 소프트락을 어떻게 막는가?",
+        "연속성·회귀·플랫폼 차이를 어떤 테스트로 확인하는가?"
+      ],
+      "required_fields": [
+        "balance_metric",
+        "save_invariant",
+        "continuity_rule",
+        "regression_test"
+      ]
+    }
+  ]
+}

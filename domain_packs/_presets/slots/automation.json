@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "category_id": "automation",
+  "label": "데이터 / 자동화",
+  "description": "입출력·안전·실행 기록을 세분화합니다.",
+  "base": false,
+  "slots": [
+    {
+      "id": "automation.inputs_outputs",
+      "category_id": "automation",
+      "title": "입력·변환·출력",
+      "purpose": "자동화의 경계와 데이터 형태를 분명히 합니다.",
+      "required": true,
+      "artifact_role": "inputs_outputs",
+      "answer_mode": "guided_choice",
+      "completion_criteria": "입력 형식·변환 단계·출력 형식이 예시와 함께 있습니다.",
+      "question": "어떤 입력을 받아 어떤 변환 뒤 어떤 출력으로 만들까요?",
+      "why_needed": "자동화가 예상 밖 데이터를 처리하지 않게 합니다.",
+      "suggestions": ["텍스트", "표/CSV", "JSON", "폴더 감시"],
+      "depends_on": []
+    },
+    {
+      "id": "automation.safety",
+      "category_id": "automation",
+      "title": "실행 안전과 롤백",
+      "purpose": "실행 전 승인·백업·롤백 조건을 정합니다.",
+      "required": true,
+      "artifact_role": "safety",
+      "answer_mode": "user_text",
+      "completion_criteria": "실행 전 확인과 실패 시 되돌리는 방법이 있습니다.",
+      "question": "실행 전에 무엇을 확인하고 실패하면 어떻게 되돌릴까요?",
+      "why_needed": "반복 실행이 데이터를 훼손하지 않게 합니다.",
+      "suggestions": ["미리보기", "백업", "dry-run", "승인 단계"],
+      "depends_on": []
+    }
+  ]
+}
